@@ -21,7 +21,7 @@ class ServiceContainerTest extends TestCase
         self::assertEquals('Foo', $vFoo->fxFoo());
         self::assertEquals('Foo', $vfoo2->fxFoo());
         self::assertNotSame($vFoo, $vfoo2);
-        
+
 
 
 
