@@ -14,6 +14,7 @@ class DependencyInjectionTest extends TestCase
         $vFoo = new Foo();
         $vBar = new Bar($vFoo);
         self::assertEquals('Foo and Bar', $vBar->bar());
+
     }
 
 }

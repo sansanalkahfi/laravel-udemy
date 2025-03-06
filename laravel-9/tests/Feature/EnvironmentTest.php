@@ -18,6 +18,6 @@ class EnvironmentTest extends TestCase
     public function test_envDefaultValue()
     {
         $defaultTest = env("DEFAULT_TEST", "yah gak ada");
-        self::assertEquals("yah gak ada", $defaultTest);
+        self::assertEquals("yahgak ada", $defaultTest);
     }
 }

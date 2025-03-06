@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Data;
+
 class Bar
 {
     private Foo $foo; //Class Bar Depends-on (bergantung) pada Clas Foo, jadi class Bar bisa dibuat klo Class Foo sudah didefinisikan terlebih dahulu
@@ -7,7 +9,6 @@ class Bar
     {
         $this->foo = $foo;
     }
-
     public function bar(): string
     {
         return $this->foo->fxFoo() . ' and Bar';
