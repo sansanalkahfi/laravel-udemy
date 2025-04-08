@@ -14,7 +14,7 @@ class ServiceContainerTest extends TestCase
 {
     public Function testDependencyInjection()
     {
-        //$foo = new Foo();
+        //$vFoo = new Foo();
         $vFoo = $this->app->make(Foo::class); //sama dengan new Foo()
         $vfoo2 = $this->app->make(Foo::class); //sama dengan New Foo (object berbeda dengan $vFoo)
 
