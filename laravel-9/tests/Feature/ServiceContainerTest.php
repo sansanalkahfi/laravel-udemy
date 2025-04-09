@@ -6,6 +6,7 @@ use App\Data\Bar;
 use App\Data\Foo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use PhpParser\Builder\Function_;
 use Tests\TestCase;
 
 use function PHPUnit\Framework\assertEquals;
@@ -21,10 +22,8 @@ class ServiceContainerTest extends TestCase
         self::assertEquals('Foo', $vFoo->fxFoo());
         self::assertEquals('Foo', $vfoo2->fxFoo());
         self::assertNotSame($vFoo, $vfoo2);
-
-
-
-
-
     }
+
+    
+
 }
