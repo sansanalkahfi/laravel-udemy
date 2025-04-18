@@ -1,5 +1,7 @@
 <?php
+
 namespace Tests\Feature;
+
 use App\Data\Bar;
 use App\Data\Foo;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -8,6 +10,8 @@ use Tests\TestCase;
 
 class FooBarServiceProviderTest extends TestCase
 {
+    public $a = 'amir';
+    public $b = 'badru';
     public function testServiceProvider()
     {
         $vFoo1 = $this->app->make(Foo::class);
@@ -19,8 +23,12 @@ class FooBarServiceProviderTest extends TestCase
         self::assertSame($vBar1, $vbar2);
 
         self::assertSame($vBar1->foo, $vFoo1);
+    }
 
-
-
+    public function testKosong()
+    {
+        $x = $this->a;
+        $y = $this->b;
+        self::assertNotSame($x, $y);
     }
 }
