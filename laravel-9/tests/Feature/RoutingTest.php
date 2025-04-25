@@ -21,4 +21,11 @@ class RoutingTest extends TestCase
             ->assertStatus(302) //Status code yang diharapkan (302 artinya redirect)
             ->assertRedirect('/pzn'); //URL tujuan redirect
     }
+
+    public function testFallback()
+    {
+        $this->get('/urlteskagaada') //Endpoint URL (Routing yang di test)
+            ->assertStatus(200) //Status code yang diharapkan (200 artinya oke)
+            ->assertSee('404 halaman kaga ada'); //Konten pada Endpoint URL
+    }
 }

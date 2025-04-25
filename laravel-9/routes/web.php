@@ -22,3 +22,7 @@ Route::get('/pzn', function () {
 });
 
 Route::redirect('/ytb', '/pzn'); // Redirect route   
+
+Route::fallback(function () {
+    return "404 halaman kaga ada";
+}); 
