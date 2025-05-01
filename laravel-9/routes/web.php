@@ -26,3 +26,8 @@ Route::redirect('/ytb', '/pzn'); // Redirect route
 Route::fallback(function () {
     return "404 halaman kaga ada";
 }); 
+
+//Test VIEW
+Route::get('/hello-test', function () {
+    return view('hello', ['nama' => 'abdul']);
+});
