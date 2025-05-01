@@ -10,9 +10,8 @@ class TestView extends TestCase
 {
     public function testView1()
     {
-        $response = $this->get('hello-test');
-        $response->assertSeeText('Hello: Abdul');
         $this->get('hello-test')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
             ->assertSeeText('Hello: Abdul');
     }
 }
