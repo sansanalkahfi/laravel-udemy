@@ -31,3 +31,6 @@ Route::fallback(function () {
 Route::get('/hello-test', function () {
     return view('hello', ['nama' => 'abdul']);
 });
+Route::get('/nested-test', function () {
+    return view('nestedView.hello', ['nama' => 'sanusi']);
+});

@@ -12,6 +12,6 @@ class TestView extends TestCase
     {
         $this->get('hello-test')
             ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
-            ->assertSeeText('Hello: Abdul');
+            ->assertSee('hello: Abdul');
     }
 }

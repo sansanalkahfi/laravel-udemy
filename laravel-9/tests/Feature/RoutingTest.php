@@ -27,5 +27,18 @@ class RoutingTest extends TestCase
         $this->get('/urlteskagaada') //Endpoint URL (Routing yang di test)
             ->assertStatus(200) //Status code yang diharapkan (200 artinya oke)
             ->assertSee('404 halaman kaga ada'); //Konten pada Endpoint URL
+           
+    }
+    public function testView1()
+    {
+        $this->get('/hello-test')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertSee('Halo: abdul');
+    }
+    public function testNestedView()
+    {
+        $this->get('/nested-test')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertSee('Halo Nested: sanusi');
     }
 }
