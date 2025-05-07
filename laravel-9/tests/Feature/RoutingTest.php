@@ -35,10 +35,6 @@ class RoutingTest extends TestCase
             ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
             ->assertSee('Halo: abdul');
     }
-    public function testNestedView()
-    {
-        $this->get('/nested-test')
-            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
-            ->assertSee('Halo Nested: sanusi');
-    }
+    
+    
 }

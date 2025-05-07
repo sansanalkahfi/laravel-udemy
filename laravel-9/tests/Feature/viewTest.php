@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class TestView extends TestCase
+class viewTest extends TestCase
 {
     public function testView1()
     {
@@ -14,12 +14,17 @@ class TestView extends TestCase
             ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
             ->assertSee('hello: Abdul');
     }
-    /**
-     * @testFunction testTestViewTestViewWithoutRoute
-     */
+
+    public function testNestedView()
+    {
+        $this->get('/nested-test')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertSeeText('Halo Nested: sanusi');
+    }
+
     public function testViewWithoutRoute()
     {
         $this->view('hello', ['nama' => 'abdul tanpa route'])
-        ->assertSeeText('hello: abdul tanpa route');
+        ->assertSeeText('Halo: abdul tanpa route');
     }
 }
