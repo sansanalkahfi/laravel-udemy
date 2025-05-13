@@ -12,7 +12,7 @@ class viewTest extends TestCase
     {
         $this->get('hello-test')
             ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
-            ->assertSee('hello: Abdul');
+            ->assertSeeText('Halo: abdul');
     }
 
     public function testNestedView()

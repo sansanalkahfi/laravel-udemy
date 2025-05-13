@@ -34,3 +34,12 @@ Route::get('/hello-test', function () {
 Route::get('/nested-test', function () {
     return view('nestedView.hello', ['nama' => 'sanusi']);
 });
+
+//TEST Route parameter
+Route::get('/products/{id}', function ($productId){
+    return "Product ID: $productId";
+});
+
+Route::get('/products/{product}/items/{item}', function ($productId, $itemId){
+    return "Product ID: $productId, Item Name: $itemId";
+});

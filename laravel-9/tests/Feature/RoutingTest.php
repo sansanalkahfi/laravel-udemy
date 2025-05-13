@@ -27,7 +27,7 @@ class RoutingTest extends TestCase
         $this->get('/urlteskagaada') //Endpoint URL (Routing yang di test)
             ->assertStatus(200) //Status code yang diharapkan (200 artinya oke)
             ->assertSee('404 halaman kaga ada'); //Konten pada Endpoint URL
-           
+
     }
     public function testView1()
     {
@@ -35,6 +35,15 @@ class RoutingTest extends TestCase
             ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
             ->assertSee('Halo: abdul');
     }
-    
-    
+
+    public function testRouteParameter()
+    {
+        $this->get('/products/23')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertSee('Product ID: 23');
+
+        $this->get('/products/12/items/1')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertSee('Product ID: 12, Item Name: 1');
+    }
 }
