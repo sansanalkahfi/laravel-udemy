@@ -25,7 +25,7 @@ Route::redirect('/ytb', '/pzn'); // Redirect route
 
 Route::fallback(function () {
     return "404 halaman kaga ada";
-}); 
+});
 
 //Test VIEW
 Route::get('/hello-test', function () {
@@ -35,11 +35,32 @@ Route::get('/nested-test', function () {
     return view('nestedView.hello', ['nama' => 'sanusi']);
 });
 
+
 //TEST Route parameter
-Route::get('/products/{id}', function ($productId){
+Route::get('/products/{id}', function ($productId) {
     return "Product ID: $productId";
+})->name('product.detail'); //named route
+
+Route::get('/products/{product}/items/{item}', function ($productId, $itemId) {
+    return "Product ID: $productId, Item Name: $itemId";
+})->name('product.item.detail'); //named route
+
+//REGULAR EXPRESSION ROUTE
+Route::get('/products-regex/{id}', function ($productId) {
+    return "Product ID: $productId";
+})->where('id', '[0-9]+');
+
+//TEST NAMED ROUTE
+Route::get('/produk/{id}', function ($id) {
+    $link = route('product.detail', ['id' => $id]);
+    return "Link: $link";
 });
 
-Route::get('/products/{product}/items/{item}', function ($productId, $itemId){
-    return "Product ID: $productId, Item Name: $itemId";
+//Contoh penerapan Named Route
+Route::get('/produk/{id}/barang/{barang}', function ($id, $barang) {
+    $link = route('product.item.detail', ['product' => $id, 'item' => $barang]);
+    return "Link: $link";
+});
+Route::get('/produk-redirect/{id}', function ($id) {
+    return redirect()->route('product.detail', ['id' => $id]);
 });

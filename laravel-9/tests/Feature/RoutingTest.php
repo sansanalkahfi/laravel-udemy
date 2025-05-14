@@ -46,4 +46,16 @@ class RoutingTest extends TestCase
             ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
             ->assertSee('Product ID: 12, Item Name: 1');
     }
+
+    public function testNamedRoute()
+    {
+        $this->get('/produk/23')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertSee('Link: http://localhost/products/23');
+
+            $this->get('/produk-redirect/23')
+            //->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertRedirect('/products/23'); //URL tujuan redirect
+
+    }
 }
