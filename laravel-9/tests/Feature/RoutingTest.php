@@ -58,4 +58,10 @@ class RoutingTest extends TestCase
             ->assertRedirect('/products/23'); //URL tujuan redirect
 
     }
+
+    public function testControllerRoute(){
+        $this->get('/controller/hello')
+            ->assertStatus(200) // Status code yang diharapkan (200 artinya oke)
+            ->assertSee('Hello World'); //Konten pada Endpoint URL
+    }
 }

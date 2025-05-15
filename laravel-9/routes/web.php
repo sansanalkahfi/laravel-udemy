@@ -64,3 +64,9 @@ Route::get('/produk/{id}/barang/{barang}', function ($id, $barang) {
 Route::get('/produk-redirect/{id}', function ($id) {
     return redirect()->route('product.detail', ['id' => $id]);
 });
+
+//TEST CONTROLLER
+Route::get('/controller/hello', [\App\Http\Controllers\HelloController::class, 'hello']);
+
+
+
