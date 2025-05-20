@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\HelloServices;
 use Illuminate\Http\Request;
 
 class HelloController extends Controller
 {
-    public function hello(): string
+    private HelloServices $helloServices;
+    public function __construct(HelloServices $helloServices)
+    {
+        $this->helloServices = $helloServices;
+    }
+    /* public function hello(): string
     {
         return 'Hello World';
+    } */
+    public function hello(string $name): string
+    {
+        return $this->helloServices->hello($name);
     }
 }
-
-

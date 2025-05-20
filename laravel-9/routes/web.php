@@ -66,7 +66,5 @@ Route::get('/produk-redirect/{id}', function ($id) {
 });
 
 //TEST CONTROLLER
-Route::get('/controller/hello', [\App\Http\Controllers\HelloController::class, 'hello']);
-
-
-
+/* Route::get('/controller/hello', [\App\Http\Controllers\HelloController::class, 'hello']); */
+Route::get('/controller/hello/{name}', [\App\Http\Controllers\HelloController::class, 'hello']);
