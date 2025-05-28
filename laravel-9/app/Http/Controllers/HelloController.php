@@ -13,8 +13,17 @@ class HelloController extends Controller
         $this->helloServices = $helloServices; // Inject HelloServices
     }
 
-    public function hello(string $name): string
+    public function hello(Request $request, string $name): string
     {
         return $this->helloServices->hello($name);
+    }
+
+    public function request(Request $request): string
+    {
+        return $request->path() . PHP_EOL . 
+            $request->url() . PHP_EOL .
+            $request->fullUrl() . PHP_EOL .
+            $request->method() . PHP_EOL .
+            $request->header('accept') . PHP_EOL;            
     }
 }
