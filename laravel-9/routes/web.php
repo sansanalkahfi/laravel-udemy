@@ -67,7 +67,18 @@ Route::get('/produk-redirect/{id}', function ($id) {
 
 //TEST CONTROLLER
 /* Route::get('/controller/hello', [\App\Http\Controllers\HelloController::class, 'hello']); */
-
 Route::get('/controller/hello/request', [\App\Http\Controllers\HelloController::class, 'request']);
-
 Route::get('/controller/hello/{name}', [\App\Http\Controllers\HelloController::class, 'hello']);
+
+//===TEST INPUT REQUEST==
+//Test dengan Method GET
+Route::get('/input/hello', [\App\Http\Controllers\InputController::class, 'hello']);
+
+//TEST dengan Method POST
+Route::post('/input/hello', [\App\Http\Controllers\InputController::class, 'hello']);
+
+//TEST dengan Method POST dan input nested
+Route::post('/input/hello/first', [\App\Http\Controllers\InputController::class, 'hellofirst']);
+
+//TEST dengan Method POST dan input semua
+Route::post('/input/hello/input', [\App\Http\Controllers\InputController::class, 'helloInput']);
