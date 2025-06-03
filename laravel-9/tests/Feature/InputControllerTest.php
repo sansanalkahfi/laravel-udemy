@@ -52,3 +52,6 @@ class InputControllerTest extends TestCase
             ->assertSeeText('Apple Mac Book Pro')->assertSeeText('Samsung Galaxy S');
     }
 }
+
+
+
