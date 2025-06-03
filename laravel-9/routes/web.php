@@ -82,3 +82,6 @@ Route::post('/input/hello/first', [\App\Http\Controllers\InputController::class,
 
 //TEST dengan Method POST dan input semua
 Route::post('/input/hello/input', [\App\Http\Controllers\InputController::class, 'helloInput']);
+
+//TEST ambil data Array spesifik
+Route::post('/input/hello/array', [\App\Http\Controllers\InputController::class, 'helloArray']);
