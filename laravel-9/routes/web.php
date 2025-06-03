@@ -85,3 +85,8 @@ Route::post('/input/hello/input', [\App\Http\Controllers\InputController::class,
 
 //TEST ambil data Array spesifik
 Route::post('/input/hello/array', [\App\Http\Controllers\InputController::class, 'helloArray']);
+
+//TEST Input Type
+Route::post('/input/type', [\App\Http\Controllers\InputController::class, 'inputType']);
+
+
