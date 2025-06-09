@@ -63,4 +63,5 @@ class InputControllerTest extends TestCase
             ->assertSeeText('true')
             ->assertSeeText('2000-01-01');
     }
+
 }
