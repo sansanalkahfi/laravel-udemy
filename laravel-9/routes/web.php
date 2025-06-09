@@ -93,5 +93,6 @@ Route::post('/input/type', [\App\Http\Controllers\InputController::class, 'input
 Route::post('/input/filter/only', [\App\Http\Controllers\InputController::class, 'filterOnly']);
 Route::post('/input/filter/except', [\App\Http\Controllers\InputController::class, 'filterExcept']);
 
-
-
+//Filter Merge & MergeIfMissing
+Route::post('/input/merge', [\App\Http\Controllers\InputController::class, 'filterMerge']);
+Route::post('/input/mergeifmising', [\App\Http\Controllers\InputController::class, 'filterMergeIfMising']);
