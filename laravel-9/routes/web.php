@@ -96,3 +96,6 @@ Route::post('/input/filter/except', [\App\Http\Controllers\InputController::clas
 //Filter Merge & MergeIfMissing
 Route::post('/input/merge', [\App\Http\Controllers\InputController::class, 'filterMerge']);
 Route::post('/input/mergeifmising', [\App\Http\Controllers\InputController::class, 'filterMergeIfMising']);
+
+//File Upload
+Route::post('/file/testupload', [\App\http\controllers\fileUploadController::class, 'testUpload']);

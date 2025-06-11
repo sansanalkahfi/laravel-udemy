@@ -18,4 +18,13 @@ class fileStorageTest extends TestCase
         );
 
     }
+    public function testPublicStorage(){
+        $filesistem = Storage::disk('public'); //memilih disk Publik
+        $filesistem->put('testpublik.txt', 'Hello, World!'); //menyimpan file testpublik.txt dengan konten 'Hello, World!'
+        self::assertEquals(
+            'Hello, World!',
+            $filesistem->get('testpublik.txt') //mengambil konten dari file testpublik.txt
+        );
+
+    }
 }
