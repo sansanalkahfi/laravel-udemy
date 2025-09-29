@@ -7,8 +7,8 @@ use Illuminate\Http\Response;
 
 class ResponseController extends Controller
 {
-    public function response( Request $req): Response
+    public function response(Request $req): Response
     {
-        return "Hello Response";
+        return response("Hello Response");
     }
 }

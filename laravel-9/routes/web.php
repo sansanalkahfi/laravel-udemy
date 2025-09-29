@@ -99,3 +99,7 @@ Route::post('/input/mergeifmising', [\App\Http\Controllers\InputController::clas
 
 //File Upload
 Route::post('/file/testupload', [\App\http\controllers\fileUploadController::class, 'testUpload']);
+
+//RESPONSE
+Route::get('/response/hello', [\App\Http\Controllers\ResponseController::class, 'response']);
+
